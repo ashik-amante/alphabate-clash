@@ -1,10 +1,6 @@
 
 
-function play(){
-    hideElementById('home');
-    showelementById('play-ground');
-    continueGame()
-}
+
 
 function continueGame(){
     // generate a random alphabet
@@ -66,7 +62,7 @@ function handleKeyBoardButtobPress(event){
         setelementValueById('current-life', newLife);
 
         if(newLife == 0){
-            console.log('gane over');
+           gameOver()
         }
 
 
@@ -83,3 +79,21 @@ function handleKeyBoardButtobPress(event){
     }
 }
 
+function play(){
+    // hide everything show play ground
+
+    hideElementById('home');
+    hideElementById('final-score')
+    showelementById('play-ground');
+    // reset score and life 
+    setelementValueById('current-life', 5)
+    setelementValueById('current-score', 0)
+
+    continueGame()
+}
+
+
+function gameOver(){
+    hideElementById('play-ground')
+    showelementById('final-score')
+}
