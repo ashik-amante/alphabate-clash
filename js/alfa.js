@@ -43,24 +43,43 @@ function handleKeyBoardButtobPress(event){
         // updadte score
 
         // get the current score
-        const currentScoreElement = document.getElementById('current-score');
-        const currentText = currentScoreElement.innerText;
-        const currentScore = parseInt(currentText);
-        console.log(currentScore);
+        // const currentScoreElement = document.getElementById('current-score');
+        // const currentText = currentScoreElement.innerText;
+        // const currentScore = parseInt(currentText);
+        // console.log(currentScore);
 
+        const currentScore = getElementValueById('current-score')
         // imcrease score
-        const newScore = currentScore+ 1;
+        const newScore = currentScore + 1;
 
-        currentScoreElement.innerText =newScore;
-
-
-
+        setelementValueById('current-score', newScore)
 
         removeBackgroundColor(expectedAlphabet)
         continueGame()
     }
     else{
-        console.log('lose');
+
+        const currentLife = getElementValueById('current-life');
+
+        const newLife = currentLife - 1 ;
+
+        setelementValueById('current-life', newLife);
+
+        if(newLife == 0){
+            console.log('gane over');
+        }
+
+
+
+
+        // ......................................................................
+        // const currentLifeId =  document.getElementById('current-life');
+        // const currentLifeText = currentLifeId.innerText;
+        // const currentLife = parseInt(currentLifeText);
+
+        // const newLife = currentLife -1 ;
+
+        // currentLifeId.innerText = newLife;
     }
 }
 
